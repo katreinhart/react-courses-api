@@ -12,6 +12,9 @@ app.use(bodyParser.json())
 const studentsRoutes = require('./src/routes/students')
 app.use('/students', studentsRoutes)
 
+const classesRoutes = require('./src/routes/classes')
+app.use('/classes', classesRoutes)
+
 app.use((err, req, res, next) => {
   const status = err.status || 500
   res.status(status).json({ error: err })
